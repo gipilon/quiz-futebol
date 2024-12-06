@@ -1,10 +1,6 @@
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #888a88;
-}
-
-.app-container {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #4caf50, #2196f3);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,34 +8,77 @@ body {
   margin: 0;
 }
 
-.circulo {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: linear-gradient(145deg, #80ffa6, #e0e5ec);
-  box-shadow: 6px 6px 12px #b0b7c4, -6px -6px 12px #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.app {
   text-align: center;
+  color: white;
 }
 
-.circulo h1,
-.circulo p {
-  margin: 0;
-  padding: 10px;
+.quiz-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), inset 0 -5px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  height: 300px;
+}
+
+.pergunta h2 {
+  font-size: 18px;
   color: #333;
 }
 
-.resultado-titulo {
-  font-size: 1.8rem;
-  font-weight: bold;
+.opcoes button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #4caf50;
+  color: white;
+  font-size: 14px;
+  transition: 0.3s ease;
+  cursor: pointer;
 }
 
-.resultado-texto {
-  font-size: 1.2rem;
-  color: #555;
+.opcoes button:hover {
+  background: #388e3c;
+  transform: scale(1.1);
+}
+
+.resultado {
+  background: white;
+  padding: 20px;
+  border-radius: 50%;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), inset 0 -5px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.resultado h2 {
+  color: #333;
+}
+
+.resultado button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #f44336;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.resultado button:hover {
+  background: #d32f2f;
 }
 
 
