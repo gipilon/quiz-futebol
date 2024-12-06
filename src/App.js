@@ -1,66 +1,70 @@
 import React, { useState } from 'react';
-import Pergunta from './components/Pergunta/Pergunta';
+import Pergunta from './Pergunta';
+import Resultado from './Resultado';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-const perguntas = [
-  { pergunta: "Quem ganhou a Copa do Mundo de 2018?", 
-    respostaCerta: "França", 
-    opcoes: ["Brasil", "França", "Alemanha", "Argentina"] 
-  },
-  { pergunta: "Qual jogador é conhecido como 'El Pibe de Oro'?", 
-    respostaCerta: "Maradona", 
-    opcoes: ["Pelé", "Maradona", "Messi", "Zidane"] 
-  },
-  { pergunta: "Qual é o time com mais títulos da Libertadores?", 
-    respostaCerta: "Independiente", 
-    opcoes: ["Boca Juniors", "River Plate", "Independiente", "Santos"] },
-];
+const App = () => {
+  const [questaoAtual, setQuestaoAtual] = useState(0);
+  const [pontuacao, setPontuacao] = useState(0);
+  const [rodada, setRodada] = useState(1);
+  const [fimDeJogo, setFimDeJogo] = useState(false);
 
-function App() {
-  const [etapa, setEtapa] = useState(0);
-  const [pontos, setPontos] = useState(0);
-  const [terminou, setTerminou] = useState(false);
+  const perguntasPorRodada = 3;
+  const perguntas = [
+    { 
+      pergunta: 'Qual time ganhou a Copa do Mundo de 2002?',
+      opcoes: ['Brasil', 'Alemanha', 'Itália', 'França'],
+      respostaCerta: 'Brasil'
+    },
+    { 
+      pergunta: 'Quem foi o artilheiro da Copa do Mundo de 2014?',
+      opcoes: ['Lionel Messi', 'Thomas Müller', 'Neymar', 'James Rodríguez'],
+      respostaCerta: 'James Rodríguez'
+    },
+    { 
+      pergunta: 'Em que ano foi realizada a primeira Copa do Mundo?',
+      opcoes: ['1930', '1950', '1960', '1970'],
+      respostaCerta: '1930'
+    },
+    // Adicione mais perguntas aqui
+  ];
 
-  const checarResposta = (resposta) => {
-    if (resposta === perguntas[etapa].respostaCerta) {
-      setPontos(pontos + 1);
+  const handleResposta = (resposta) => {
+    if (resposta === perguntas[questaoAtual].respostaCerta) {
+      setPontuacao(pontuacao + 1);
     }
-    if (etapa + 1 < perguntas.length) {
-      setEtapa(etapa + 1);
+    const proximaQuestao = questaoAtual + 1;
+    if (proximaQuestao < perguntas.length && (proximaQuestao % perguntasPorRodada) !== 0) {
+      setQuestaoAtual(proximaQuestao);
+    } else if (proximaQuestao < perguntas.length && (proximaQuestao % perguntasPorRodada) === 0) {
+      setRodada(rodada + 1);
+      setQuestaoAtual(proximaQuestao);
     } else {
-      setTerminou(true);
+      setFimDeJogo(true);
     }
-  };
-
-  const reiniciarQuiz = () => {
-    setEtapa(0);
-    setPontos(0);
-    setTerminou(false);
   };
 
   return (
-    <div className="app">
-      {!terminou ? (
-        <div className="quiz-container">
-          <div className="pergunta">
-            <h2>{perguntas[etapa].pergunta}</h2>
-            <div className="opcoes">
-              {perguntas[etapa].opcoes.map((opcao) => (
-                <button key={opcao} onClick={() => checarResposta(opcao)}>
-                  {opcao}
-                </button>
-              ))}
-            </div>
+    <div className="container">
+      <h1>Quiz de Futebol</h1>
+      {!fimDeJogo ? (
+        <>
+          <div className="status">
+            <p>Rodada: {rodada}</p>
+            <p>Pontuação: {pontuacao}</p>
           </div>
-        </div>
+          <Pergunta
+            dados={perguntas[questaoAtual]}
+            handleResposta={handleResposta}
+          />
+        </>
       ) : (
-        <div className="resultado">
-          <h2>{pontos === perguntas.length ? "Gol de placa! Você acertou todas!" : `Você acertou ${pontos} de ${perguntas.length}`}</h2>
-          <button onClick={reiniciarQuiz}>Tente Novamente</button>
-        </div>
+        <Resultado pontuacao={pontuacao} totalPerguntas={perguntas.length} />
       )}
     </div>
   );
-}
+};
 
 export default App;
+

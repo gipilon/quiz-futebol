@@ -1,84 +1,75 @@
-body {
-  font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #4caf50, #2196f3);
+/* Centralizar o conteúdo da página */
+.container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
+  background-color: #f7f9fc;
+  font-family: 'Arial', sans-serif;
 }
 
-.app {
+/* Estilização do título */
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Estilização das perguntas */
+h2 {
+  color: #333;
+  font-size: 24px;
   text-align: center;
+}
+
+/* Estilização das opções de resposta */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #006400;
   color: white;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.quiz-container {
+li:hover {
+  background-color: #0056b3;
+}
+
+/* Estilização do resultado */
+button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Estilo do status da rodada e pontuação */
+.status {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 20px;
-  background: #ffffff;
-  border-radius: 50%;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), inset 0 -5px 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  height: 300px;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
 }
 
-.pergunta h2 {
+.status p {
+  margin: 0;
   font-size: 18px;
   color: #333;
-}
-
-.opcoes button {
-  margin: 5px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  background: #4caf50;
-  color: white;
-  font-size: 14px;
-  transition: 0.3s ease;
-  cursor: pointer;
-}
-
-.opcoes button:hover {
-  background: #388e3c;
-  transform: scale(1.1);
-}
-
-.resultado {
-  background: white;
-  padding: 20px;
-  border-radius: 50%;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), inset 0 -5px 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.resultado h2 {
-  color: #333;
-}
-
-.resultado button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  background: #f44336;
-  color: white;
-  font-size: 14px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.resultado button:hover {
-  background: #d32f2f;
 }
 
 
