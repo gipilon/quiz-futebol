@@ -1,76 +1,24 @@
+ Quiz de Futebol ⚽️🎉 
+Bem-vindo ao **Quiz de Futebol**! Este projeto é um jogo interativo baseado em web, onde você pode testar seus conhecimentos sobre futebol. O jogo foi desenvolvido utilizando React para os componentes da interface e Bootstrap para o design responsivo, com princípios de usabilidade e heurísticas de Nielsen aplicadas.  
 
+📋 Descrição do Projeto O **Quiz de Futebol** é um jogo simples e divertido, com perguntas sobre futebol que desafiarão seu conhecimento. A cada rodada, uma pergunta é apresentada e você deve escolher a resposta correta entre as opções fornecidas. Se você acertar todas as perguntas, será saudado com fogos de artifício verdes! 
 
-⚽ Quiz de Futebol
-Um projeto de quiz interativo sobre futebol, criado com React, para testar seus conhecimentos sobre o esporte mais popular do mundo! 🥅⚽
+🎯 Objetivo - Desenvolver uma aplicação web interativa. 
+- Utilizar React e Bootstrap para construção da interface. 
+- Aplicar princípios de usabilidade e heurísticas de Nielsen. 
+- Criar um ambiente de desenvolvimento configurado com NodeJS. 
 
-🎯 Objetivo
-O objetivo deste quiz é proporcionar uma experiência divertida e educativa, desafiando os usuários com perguntas sobre futebol e oferecendo feedback imediato sobre suas respostas.
+🛠️ Tecnologias Utilizadas 
+React: Biblioteca JavaScript para construção de interfaces de usuário. 
+Bootstrap: Framework CSS para design responsivo. 
+NodeJS: Ambiente de execução para JavaScript no servidor. 
+Animate.css: Biblioteca de animações CSS para melhorar a experiência do usuário. 
 
-🚀 Funcionalidades
-Perguntas interativas: As perguntas aparecem centralizadas em um círculo moderno e estilizado.
-Feedback imediato: O resultado do quiz é exibido ao final, indicando o desempenho do usuário.
-Usabilidade aprimorada: Possibilidade de tentar novamente em caso de erros, seguindo as heurísticas de Nielsen.
-Design responsivo: Experiência consistente em dispositivos móveis e desktops.
-🛠️ Tecnologias Utilizadas
-Linguagens: JavaScript, CSS
-Framework: React
-Estilização: CSS moderno com sombras e centralização para uma aparência profissional.
-📦 Como Rodar o Projeto
-Siga os passos abaixo para rodar o projeto localmente:
+🚀 Funcionalidades 
+Jogo de Quiz: Teste seus conhecimentos sobre futebol com perguntas variadas.
 
-Pré-requisitos
-Node.js (versão LTS recomendada: 22.12.0)
-Git
-Passos
-Clone o repositório:
+Feedback Visual: Receba feedback visual imediato ao responder as perguntas. 
 
-bash
-Copiar código
-git clone https://github.com/seu-usuario/quiz-futebol.git
-cd quiz-futebol
-Instale as dependências:
+Fogos de Artifício: Veja fogos de artifício verdes se acertar todas as perguntas. 
 
-bash
-Copiar código
-npm install
-Inicie o servidor local:
-
-bash
-Copiar código
-npm start
-Abra http://localhost:3000 no navegador para visualizar o projeto.
-
-🖌️ Personalização
-Alterar Perguntas
-As perguntas do quiz estão definidas no arquivo Perguntas.js. Você pode editar ou adicionar novas perguntas diretamente no array perguntas.
-
-Ajustar Estilo
-A estilização está no arquivo App.css. Você pode modificar o design ajustando propriedades como:
-
-Cor do círculo
-Sombra do botão
-Fonte e animações
-🤝 Contribuição
-Contribuições são bem-vindas! Para contribuir:
-
-Faça um fork do repositório.
-Crie uma branch com sua feature/bugfix:
-bash
-Copiar código
-git checkout -b minha-feature
-Faça o commit de suas alterações:
-bash
-Copiar código
-git commit -m "Descrição da alteração"
-Faça o push da sua branch:
-bash
-Copiar código
-git push origin minha-feature
-Abra um Pull Request.
-📜 Licença
-Este projeto está sob a licença MIT. Consulte o arquivo LICENSE para mais detalhes.
-
-🎉 Agradecimentos
-Este projeto foi inspirado pelo amor ao futebol e pela vontade de criar algo divertido e interativo. Esperamos que você aproveite o quiz tanto quanto nós aproveitamos ao desenvolvê-lo!
-
-Caso precise de ajuda para adaptar algo no README ou no projeto, é só avisar! 🚀
+Design Responsivo: A interface se adapta a diferentes tamanhos de tela.

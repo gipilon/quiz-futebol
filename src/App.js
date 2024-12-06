@@ -7,10 +7,8 @@ import './App.css';
 const App = () => {
   const [questaoAtual, setQuestaoAtual] = useState(0);
   const [pontuacao, setPontuacao] = useState(0);
-  const [rodada, setRodada] = useState(1);
   const [fimDeJogo, setFimDeJogo] = useState(false);
 
-  const perguntasPorRodada = 3;
   const perguntas = [
     { 
       pergunta: 'Qual time ganhou a Copa do Mundo de 2002?',
@@ -27,6 +25,29 @@ const App = () => {
       opcoes: ['1930', '1950', '1960', '1970'],
       respostaCerta: '1930'
     },
+    { 
+      pergunta: 'Qual jogador é conhecido como "O Fenômeno"?',
+      opcoes: ['Pelé', 'Romário', 'Ronaldo', 'Zico'],
+      respostaCerta: 'Ronaldo'
+    },
+    { 
+      pergunta: 'Quem é o jogador com mais títulos na história do futebol?',
+      opcoes: ['Pelé', 'Dani Alves', 'Lionel Messi', 'Cristiano Ronaldo'],
+      respostaCerta: 'Dani Alves'
+    },
+    { 
+      pergunta: 'Qual time ganhou a Libertadores 2020?',
+      opcoes: ['River Plate', 'Palmeiras', 'Santos', 'Boca Juniors'],
+      respostaCerta: 'Palmeiras'
+    },
+    { pergunta: 'Quem foi o artilheiro do Campeonato Brasileiro de 2019?', 
+      opcoes: ['Gabigol', 'Bruno Henrique', 'Dudu', 'Everton'], 
+      respostaCerta: 'Gabigol' 
+    }, 
+    { pergunta: 'Qual seleção possui mais títulos da Copa do Mundo?', 
+        opcoes: ['Brasil', 'Alemanha', 'Itália', 'Argentina'], 
+        respostaCerta: 'Brasil' 
+    }
     // Adicione mais perguntas aqui
   ];
 
@@ -35,10 +56,7 @@ const App = () => {
       setPontuacao(pontuacao + 1);
     }
     const proximaQuestao = questaoAtual + 1;
-    if (proximaQuestao < perguntas.length && (proximaQuestao % perguntasPorRodada) !== 0) {
-      setQuestaoAtual(proximaQuestao);
-    } else if (proximaQuestao < perguntas.length && (proximaQuestao % perguntasPorRodada) === 0) {
-      setRodada(rodada + 1);
+    if (proximaQuestao < perguntas.length) {
       setQuestaoAtual(proximaQuestao);
     } else {
       setFimDeJogo(true);
@@ -49,16 +67,10 @@ const App = () => {
     <div className="container">
       <h1>Quiz de Futebol</h1>
       {!fimDeJogo ? (
-        <>
-          <div className="status">
-            <p>Rodada: {rodada}</p>
-            <p>Pontuação: {pontuacao}</p>
-          </div>
-          <Pergunta
-            dados={perguntas[questaoAtual]}
-            handleResposta={handleResposta}
-          />
-        </>
+        <Pergunta
+          dados={perguntas[questaoAtual]}
+          handleResposta={handleResposta}
+        />
       ) : (
         <Resultado pontuacao={pontuacao} totalPerguntas={perguntas.length} />
       )}
@@ -67,4 +79,6 @@ const App = () => {
 };
 
 export default App;
+
+
 
